@@ -18,7 +18,8 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: radial-gradient(circle at center, #351d3f 0%, #24121f 55%, #0d0810 100%);
+    background:
+        radial-gradient(circle at center, #3a1f46 0%, #28152d 52%, #160b1b 100%);
     color: white;
     overflow-x: hidden;
 }
@@ -46,13 +47,36 @@ button {
     inset: 0;
     pointer-events: none;
     z-index: 0;
+
     background-image:
-        radial-gradient(circle, white 1px, transparent 1px),
-        radial-gradient(circle, white 1px, transparent 1px);
-    background-size: 90px 90px, 130px 130px;
-    background-position: 0 0, 40px 60px;
-    opacity: .35;
-    animation: starsMove 20s linear infinite;
+        radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,.65) 1px, transparent 1.5px);
+
+    background-size: 190px 190px, 270px 270px;
+    background-position: 15px 25px, 90px 120px;
+
+    opacity: .42;
+
+    /* Keep the center mostly clear and show more stars toward the sides */
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0,0,0,.12) 32%,
+        rgba(0,0,0,.65) 58%,
+        black 82%,
+        black 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0,0,0,.12) 32%,
+        rgba(0,0,0,.65) 58%,
+        black 82%,
+        black 100%
+    );
+
+    animation: starsMove 25s linear infinite;
 }
 
 @keyframes starsMove {
@@ -68,7 +92,8 @@ button {
 
 #opening {
     text-align: center;
-    background: transparent;
+    background:
+        radial-gradient(circle at center, #351d3f, #080812 65%);
 }
 
 .opening-content {
@@ -115,7 +140,7 @@ h1 {
 /* ---------- ENVELOPE ---------- */
 
 #envelopeSection {
-    background: transparent;
+    background: linear-gradient(135deg, #160d20, #32162f);
     text-align: center;
 }
 
@@ -187,7 +212,7 @@ h1 {
 /* ---------- BALLOONS ---------- */
 
 #balloons {
-    background: transparent;
+    background: radial-gradient(circle, #24204b, #080812);
     overflow: hidden;
     text-align: center;
 }
@@ -315,7 +340,7 @@ h1 {
 /* ---------- GALLERY ---------- */
 
 #gallery {
-    background: transparent;
+    background: #0c0b14;
     flex-direction: column;
     text-align: center;
 }
@@ -331,7 +356,7 @@ h1 {
 
 .photo-card {
     width: 180px;
-    height: 220px;
+    height: 245px;
     background: white;
     padding: 10px;
     transform: rotate(-3deg);
@@ -361,7 +386,7 @@ h1 {
 /* ---------- GIFT ---------- */
 
 #giftSection {
-    background: transparent;
+    background: linear-gradient(135deg, #160f27, #291632);
     flex-direction: column;
     text-align: center;
 }
@@ -427,7 +452,7 @@ h1 {
 #cakeSection {
     flex-direction: column;
     text-align: center;
-    background: transparent;
+    background: radial-gradient(circle, #30233d, #080812);
 }
 
 .cake {
@@ -508,7 +533,7 @@ h1 {
 /* ---------- LETTER ---------- */
 
 #letterSection {
-    background: transparent;
+    background: linear-gradient(135deg, #26152d, #110c18);
     text-align: center;
 }
 
@@ -527,7 +552,7 @@ h1 {
 /* ---------- FINAL ---------- */
 
 #final {
-    background: transparent;
+    background: radial-gradient(circle, #43213e, #080812);
     text-align: center;
     overflow: hidden;
 }
@@ -594,7 +619,7 @@ h1 {
 
     .photo-card {
         width: 145px;
-        height: 185px;
+        height: 205px;
     }
 
     .photo-placeholder {
@@ -604,6 +629,29 @@ h1 {
     .cake {
         transform: scale(.8);
     }
+}
+
+
+/* ---------- UNIFIED DARK PURPLE STARRY BACKGROUND ---------- */
+#opening,
+#envelopeSection,
+#balloons,
+#gallery,
+#giftSection,
+#cakeSection,
+#letterSection,
+#final {
+    background: transparent !important;
+}
+
+
+.photo-caption {
+    color: #3b263f;
+    font-size: 11px;
+    line-height: 1.25;
+    text-align: center;
+    margin-top: 7px;
+    font-weight: bold;
 }
 
 </style>
@@ -619,7 +667,7 @@ h1 {
     <div class="opening-content">
 
         <div class="small-title">
-            A little surprise from Mickey ❤️
+            A little surprise from Romeesa ❤️
         </div>
 
         <h1>
@@ -645,7 +693,7 @@ h1 {
     <div>
 
         <h2 class="envelope-title">
-            You have a secret letter from Mickey ❤️
+            You have a secret letter from Romeesa ❤️
         </h2>
 
         <div class="envelope" id="envelope" onclick="openEnvelope()">
@@ -653,7 +701,7 @@ h1 {
             <div class="letter">
 
                 <strong>
-                    A little message from Mickey ❤️
+                    A little message from Romeesa ❤️
                 </strong>
 
                 <br><br>
@@ -685,7 +733,7 @@ h1 {
         </h2>
 
         <p style="margin-top:10px;">
-            Each one hides a little surprise from Mickey ❤️
+            Each one hides a little surprise from Romeesa ❤️
         </p>
 
         <div class="balloon"
@@ -737,30 +785,35 @@ h1 {
             <div class="photo-placeholder">
                 PHOTO 1
             </div>
+            <div class="photo-caption">A little moment, a big memory ❤️</div>
         </div>
 
         <div class="photo-card">
             <div class="photo-placeholder">
                 PHOTO 2
             </div>
+            <div class="photo-caption">One of my favorite smiles ✨</div>
         </div>
 
         <div class="photo-card">
             <div class="photo-placeholder">
                 PHOTO 3
             </div>
+            <div class="photo-caption">A memory worth keeping forever 💕</div>
         </div>
 
         <div class="photo-card">
             <div class="photo-placeholder">
                 PHOTO 4
             </div>
+            <div class="photo-caption">You make ordinary moments special 🌙</div>
         </div>
 
         <div class="photo-card">
             <div class="photo-placeholder">
                 PHOTO 5
             </div>
+            <div class="photo-caption">Always a beautiful memory to cherish ❤️</div>
         </div>
 
     </div>
@@ -788,7 +841,7 @@ h1 {
 
     <div class="gift-message" id="giftMessage">
 
-        You found another surprise from Mickey! ✨❤️
+        You found another surprise from Romeesa! ✨❤️
 
         <br><br>
 
@@ -890,7 +943,7 @@ h1 {
 
             <br><br>
 
-            With love, Mickey ❤️
+            With love, Romeesa ❤️
 
         </p>
 
@@ -912,7 +965,7 @@ h1 {
     <div class="final-content">
 
         <div class="small-title">
-            The final surprise from Mimi ❤️
+            The final surprise from Romeesa ❤️
         </div>
 
         <h2>
@@ -926,7 +979,7 @@ h1 {
         <br>
 
         <p style="font-size:20px;">
-            With love, Mickey ❤️
+            With love, Romeesa ❤️
         </p>
 
         <br>
